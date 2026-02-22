@@ -1,27 +1,23 @@
-// Ticket.java
-
-package edu.lospedros.estacionamiento.process;
+import java.time.Duration;
+import java.time.LocalDateTime;
 
 public class Ticket {
-    private final String vehicleSize;
-    private final long entryTime;
-    private long exitTime;
+    private String ticketId;
+    private Vehicle vehicle;
+    private LocalDateTime entryTime;
+    private LocalDateTime exitTime;
 
-    public Ticket(String vehicleSize, long entryTime) {
-        this.vehicleSize = vehicleSize;
+    public Ticket(String ticketId, Vehicle vehicle, LocalDateTime entryTime) {
+        this.ticketId = ticketId;
+        this.vehicle = vehicle;
         this.entryTime = entryTime;
-        this.exitTime = -1;
     }
 
-    public void setExitTime(long exitTime) {
+    public void setExitTime(LocalDateTime exitTime) {
         this.exitTime = exitTime;
     }
 
-    public String getVehicleSize() {
-        return vehicleSize;
-    }
-
-    public long getDurationInHours() {
-        return (exitTime - entryTime) / 3600000;
+    public Duration calculateParkingDuration() {
+        return Duration.between(entryTime, exitTime);
     }
 }
