@@ -1,10 +1,5 @@
-// Updated to return String instead of VehicleSize
-public class Vehicle {
-    private String licensePlate;
-    ...
-
-    public String getLicensePlate() {
-        return licensePlate;
-    }
-    ...
+package edu.lospedros.estacionamiento.data;
+public interface Vehicle {
+    String getLicensePlate();
+    VehicleSize getSize();
 }
