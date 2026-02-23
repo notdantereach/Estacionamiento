@@ -1,27 +1,29 @@
+// Ticket.java
 package edu.lospedros.estacionamiento.process;
 
-import java.time.Duration;
-import java.time.LocalDateTime;
-
 public class Ticket {
-    private final String ticketId;
-    private final Vehicle vehicle;
-    private final LocalDateTime entryTime;
-    private LocalDateTime exitTime;
+    private String id;
+    private long startTime;
+    private long endTime;
 
-    public Ticket(String ticketId, Vehicle vehicle) {
-        this.ticketId = ticketId;
-        this.vehicle = vehicle;
-        this.entryTime = LocalDateTime.now();
+    public Ticket(String id, long startTime) {
+        this.id = id;
+        this.startTime = startTime;
     }
 
-    public void setExitTime(LocalDateTime exitTime) {
-        this.exitTime = exitTime;
+    public String getId() {
+        return id;
     }
 
-    public Duration calculateParkingDuration() {
-        return Duration.between(entryTime, exitTime != null ? exitTime : LocalDateTime.now());
+    public long getStartTime() {
+        return startTime;
     }
 
-    // Getters and setters
+    public long getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(long endTime) {
+        this.endTime = endTime;
+    }
 }
