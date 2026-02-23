@@ -1,3 +1,9 @@
+package edu.lospedros.estacionamiento.payment.fare;
+
+import edu.lospedros.estacionamiento.process.Ticket;
+
+import java.math.BigDecimal;
+
 public interface FareStrategy {
-    double calculateFare(int duration);
+    BigDecimal calculateFare(Ticket ticket, BigDecimal inputFare);
 }
