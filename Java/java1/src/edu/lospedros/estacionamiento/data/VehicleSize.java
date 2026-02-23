@@ -1,7 +1,5 @@
 package edu.lospedros.estacionamiento.data;
 
 public enum VehicleSize {
-    SMALL,
-    MEDIUM,
-    LARGE
+    SMALL, MEDIUM, LARGE
 }
